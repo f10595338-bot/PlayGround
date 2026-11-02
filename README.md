@@ -16,3 +16,19 @@
 - 👤 [Explore the creator's projects](https://omgithub.com/f10595338-bot).
 - 🌍 [Create with OMGithub](https://omgithub.com).
 <!-- omgithub:readme:end -->
+
+## Neon District
+
+A small, browser-playable 3D open-city driving game. Explore the streets on foot, hop into the red sports car, collect cash, and race through six checkpoints for a $2,500 reward.
+
+### Play
+
+Open `index.html` from a local web server (for example, `python3 -m http.server 3002`) and visit `http://localhost:3002`. The game loads Three.js from jsDelivr, so an internet connection is needed.
+
+- **WASD** — move / drive
+- **E** — enter or exit the red car
+- **Space** — handbrake
+- **Drag the mouse** — orbit the camera
+- **Touch controls** — directional pad, enter, and brake on small screens
+
+Start the street-race challenge from the panel and drive through the glowing green checkpoint rings before the timer expires.

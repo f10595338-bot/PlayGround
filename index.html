@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101722" />
+  <title>Neon District — Open City</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}
+  </script>
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <main id="game" aria-label="Neon District 3D open city game">
+    <canvas id="scene"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">N</span><div><b>NEON DISTRICT</b><small>FREE ROAM · LOS SANTOS BAY</small></div></div>
+      <div class="wanted"><span class="wanted-label">HEAT</span><div class="stars"><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="clock"><span class="sun">☼</span><b id="timeLabel">18:42</b><small>WEDNESDAY</small></div>
+    </header>
+    <section class="mission-card" id="missionCard">
+      <div class="mission-kicker"><span class="live-dot"></span> STREET RACE · 01</div>
+      <h1>THE LONG WAY<br><em>HOME</em></h1>
+      <p>Hit every checkpoint before the clock runs out. The city is yours.</p>
+      <div class="mission-progress"><div class="progress-track"><i id="missionProgress"></i></div><span id="checkpointCount">0 / 6</span></div>
+      <button id="startMission" class="mission-button"><span>START CHALLENGE</span><b>↗</b></button>
+      <div class="mission-reward"><span>REWARD</span><strong>$2,500</strong></div>
+    </section>
+    <section class="hud-right">
+      <div class="cash-card"><span class="cash-icon">＄</span><div><small>WALLET</small><strong id="cash">$ 1,250</strong></div><span class="cash-plus">+</span></div>
+      <div class="minimap-frame"><canvas id="minimap" width="220" height="220"></canvas><div class="map-label">VESPUCCI BEACH <span>◉</span></div></div>
+      <div class="street-tag"><span class="pin">⌖</span><div><small>YOU ARE NEAR</small><b id="streetName">SUNSET BLVD</b></div></div>
+    </section>
+    <div class="vehicle-hud" id="vehicleHud">
+      <div class="speed-wrap"><strong id="speed">000</strong><span>KM/H</span></div>
+      <div class="gear">D</div><div class="speedbar"><i id="speedbar"></i></div>
+    </div>
+    <div class="prompt" id="prompt"><kbd>E</kbd><span>ENTER VEHICLE</span></div>
+    <div class="toast" id="toast"></div>
+    <div class="bottom-hints">
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <label>MOVE / DRIVE</label></span>
+      <span><kbd>SPACE</kbd> <label>HANDBRAKE</label></span>
+      <span><kbd>E</kbd> <label>ENTER / EXIT</label></span>
+      <span class="hint-right">MOUSE <label>LOOK AROUND</label></span>
+    </div>
+    <div class="mobile-controls" id="mobileControls">
+      <div class="dpad"><button data-key="w">▲</button><div><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></div></div>
+      <button class="mobile-action" id="mobileEnter">ENTER</button>
+      <button class="mobile-brake" data-key="space">BRAKE</button>
+    </div>
+    <div class="loading" id="loading"><div class="loader-mark">N</div><span>BUILDING YOUR CITY</span><i></i></div>
+    <div class="error-message" id="errorMessage" hidden>Couldn't load the 3D engine. Check your connection and refresh.</div>
+  </main>
+</body>
+</html>
